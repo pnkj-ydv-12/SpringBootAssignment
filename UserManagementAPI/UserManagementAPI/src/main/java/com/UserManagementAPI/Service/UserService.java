@@ -27,6 +27,10 @@ public class UserService {
     public List<User> getAllUsers() {
         return userRepository.findAll();
     }
+    
+    public void deleteUserById(Long id){
+        userRepository.deleteById(id); 
+   }
  
     
     public List<User> sortUsers(String property) {
