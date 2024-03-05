@@ -24,6 +24,12 @@ public class UserController {
     public List<User> getAllUsers() {
         return userService.getAllUsers();
     }
+
+    @DeleteMapping("/{userId}")
+    public void deleteData(@PathVariable Long id){
+    	 userService.deleteUserById(id);
+    	 System.out.println("User deleted successfully");
+    	}
  
     @GetMapping("/sort/{property}")
     public ResponseEntity<List<User>> sortUsers(@PathVariable String property) {
